@@ -1,0 +1,20 @@
+{
+  "name": "pi-browser-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "keywords": ["pi-package"],
+  "pi": { "extensions": ["./src/index.ts"] },
+  "scripts": { "typecheck": "tsc --noEmit", "test": "tsx --test test/*.test.ts", "check": "npm run typecheck && npm test" },
+  "dependencies": { "pi-browser": "file:../pi-browser" },
+  "overrides": {
+    "@earendil-works/chord": "1.0.4",
+    "@earendil-works/pi-agent-core": "1.0.4",
+    "@earendil-works/pi-ai": "1.0.4",
+    "@earendil-works/pi-codemode": "1.0.4",
+    "@earendil-works/pi-mcp": "1.0.4",
+    "@earendil-works/pi-tui": "1.0.4"
+  },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": "*" },
+  "devDependencies": { "@earendil-works/pi-coding-agent": "1.0.4", "@types/node": "^24.0.0", "tsx": "^4.20.0", "typescript": "^5.9.0" }
+}

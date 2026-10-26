@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+artifacts/
+.pi/dreams/
+*.tsbuildinfo
+.DS_Store
+
+# temporary - until there are working plugin examples
+docs/

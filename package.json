@@ -1,0 +1,38 @@
+{
+  "name": "pi-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A screenshot-driven Chromium browser for Pi agents and terminal previews.",
+  "type": "module",
+  "keywords": ["pi-package"],
+  "files": ["src", "examples", "docs", "README.md"],
+  "exports": { "./plugins": "./src/plugins/sdk.ts" },
+  "engines": { "node": ">=22.19.0" },
+  "pi": { "extensions": ["./src/index.ts"] },
+  "scripts": {
+    "dev": "pi --extension ./src/index.ts",
+    "demo": "tsx examples/inspection-demo.ts",
+    "demo:record": "tsx examples/record-inspection-demo.ts",
+    "dream:demo": "tsx examples/dream-demo.ts",
+    "dream:record": "tsx examples/record-dream-demo.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "browser:install": "playwright install chromium"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "dependencies": {
+    "playwright": "^1.63.0"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.0.4",
+    "@earendil-works/pi-tui": "1.0.4",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
